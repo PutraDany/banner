@@ -1,47 +1,47 @@
-<!--# 今年最后一天Banner全新升级，祝大家新年快乐-->
+<!--# Terakhir tahun ini Banner Peningkatan baru, selamat tahun baru kepada semua-->
 <!--<img src="images/mouse_year.png" width="1080"/>-->
 
-## Banner 2.0 全新升级
-> 只做一个可以自定义的轮播容器，不侵入UI ———— Banner 2.0
+## Banner 2.0 Peningkatan baru
+> Hanya buat bekas karusel yang boleh disesuaikan, tidak mengganggu UI ———— Banner 2.0
 
-<a href="https://github.com/youth5201314/banner/tree/release-1.4.10" target="_blank">Banner 1.4.10(还想看老版本的可以点击这里)</a>
+<a href="https://github.com/youth5201314/banner/tree/release-1.4.10" target="_blank">Banner 1.4.10(Jika anda ingin melihat versi lama, klik di sini)</a>
 
-### 阔别已久，从新回归
+### Setelah sekian lama tidak hadir, kembali lagi
 
-* 首先我声明几点：
-    * 这只是一个开源库，如果满意你可以使用、可以借鉴修改，希望对你们有所帮助。
-    * 如果不满意请友好的提出，注明错误的详细信息或者修改建议，好的想法和自定义的东西亦可以直接提交，大家都能来一起完善。
-    * 如果你觉得实在是没用，也请你做一个有自我修养的人。
+* Mula-mula saya mengisytiharkan beberapa perkara:
+    * Ini hanyalah perpustakaan sumber terbuka. Jika anda berpuas hati, anda boleh menggunakannya, anda boleh belajar daripadanya dan mengubah suainya, saya harap ia akan membantu anda.
+    * Jika anda tidak berpuas hati, sila kemukakan, nyatakan butiran yang salah atau ubah suai cadangan, idea yang baik dan perkara yang disesuaikan juga boleh diserahkan secara langsung, dan semua orang boleh datang dan menambah baik bersama-sama.
+    * Jika anda rasa ia benar-benar sia-sia, sila jadi orang yang bercucuk tanam diri.
    
-### 主要改进功能介绍
-最开始是想上传以前基于viewpager更新好的版本，但是看着viewpager2正式版已经出来了，就上新的吧，viewpager2确实比viewpager性能好很多。
+### Penambahbaikan besar diperkenalkan
+Pada mulanya, saya ingin memuat naik viewpager Versi dikemas kini, tetapi melihat viewpager2 Versi rasmi telah keluar, mari letakkan yang baru padanya.viewpager2 memang daripada viewpager Prestasi yang jauh lebih baik.
 
-- [x] 使用了ViewPager2为基础控件  <a href="https://developer.android.google.cn/jetpack/androidx/releases/viewpager2" target="_blank">ViewPager2介绍</a>
-- [x] 支持了androidx兼容包
-- [x] 方便了UI、Indicator自定义
-- [x] 支持画廊效果、魅族效果
-- [x] 兼容了水平和垂直轮播，也可以实现类似淘宝头条的效果
-- [x] 依赖包目前只需要导入了ViewPager2
+- [x] Digunakan ViewPager2 kawalan asas  <a href="https://developer.android.google.cn/jetpack/androidx/releases/viewpager2" target="_blank">ViewPager2 memperkenalkan</a>
+- [x] Disokong androidx Pek Keserasian
+- [x] Mudah UI、Indicator menyesuaikan
+- [x] Kesan galeri sokongan, kesan Meizu
+- [x] Serasi dengan putaran mendatar dan menegak, dan juga boleh mencapai kesan yang serupa dengan tajuk utama Taobao
+- [x] Ketergantungan pada masa ini hanya perlu diimport ViewPager2
 
 
 
-### 效果图
-更多效果运行demo查看
+### rendering
+Lebih banyak kesan dijalankan demo Semak
 
-![默认](images/banner_example.gif)
+![lalai](images/banner_example.gif)
 
-![画廊](images/banner_example2.gif)
+![galeri](images/banner_example2.gif)
 
-![魅族](images/banner_example1.gif)
+![Meizu](images/banner_example1.gif)
 
-![头条](images/banner_example3.gif)
+![tajuk utama](images/banner_example3.gif)
 
-##### 内置了多种PageTransformer效果
+##### Pelbagai terbina dalam PageTransformer Kesan
 
 ![DepthPageTransformer](images/DepthPageTransformer.gif)
 ![ZoomOutPageTransformer](images/ZoomOutPageTransformer.gif)
 
-|内置的PageTransformer|
+|terbina dalam PageTransformer|
 |---|
 |AlphaPageTransformer|
 |DepthPageTransformer|
@@ -50,30 +50,30 @@
 |RotateYTransformer|
 |ScaleInTransformer|
 |ZoomOutPageTransformer|
- 也可以组合使用效果更佳
+ Ia juga boleh digunakan dalam kombinasi untuk kesan yang lebih baik
 
-## 方法
-更多方法以实际使用为准，下面不一定全部列出了
+## kaedah
+Lebih banyak kaedah tertakluk kepada penggunaan sebenar, tidak semuanya disenaraikan di bawah
 
-|方法名|返回类型|描述|
+|nama kaedah|jenis pemulangan|keterangan|
 |---|---|---|
-|getAdapter()|extends BannerAdapter|获取你设置的BannerAdapter
-|getViewPager2()|ViewPager2|获取ViewPager2
-|getIndicator()|Indicator|获取你设置的指示器（没有设置直接获取会抛异常哦）
-|getIndicatorConfig()|IndicatorConfig|获取你设置的指示器配置信息（没有设置直接获取会抛异常哦）
-|getRealCount()|int|返回banner真实总数
-|setUserInputEnabled(boolean)|this|禁止手动滑动Banner;true 允许，false 禁止
-|setDatas(List<T>)|this|重新设置banner数据
-|isAutoLoop(boolean)|this|是否允许自动轮播
-|setLoopTime(long)|this|设置轮播间隔时间（默认3000毫秒）
-|setScrollTime(long)|this|设置轮播滑动的时间（默认800毫秒）
-|start()|this|开始轮播(主要配合生命周期使用)，或者你手动暂停再次启动
-|stop()|this|停止轮播(主要配合生命周期使用)，或者你需要手动暂停
-|setAdapter(T extends BannerAdapter)|this|设置banner的适配器
-|setAdapter(T extends BannerAdapter,boolean)|this|设置banner的适配器,是否支持无限循环
-|setOrientation(@Orientation)|this|设置banner轮播方向(垂直or水平)
-|setOnBannerListener(this)|this|设置点击事件，下标是从0开始
-|addOnPageChangeListener(this)|this|添加viewpager2的滑动监听
+|getAdapter()|extends BannerAdapter|dapatkan tetapan anda BannerAdapter
+|getViewPager2()|ViewPager2|Dapatkan ViewPager2
+|getIndicator()|Indicator|Dapatkan penunjuk yang anda tetapkan (jika anda tidak menetapkannya secara langsung, ia akan mengeluarkan pengecualian)
+|getIndicatorConfig()|IndicatorConfig|Dapatkan maklumat konfigurasi penunjuk yang anda tetapkan (jika anda tidak menetapkannya secara langsung, ia akan mengeluarkan pengecualian.）
+|getRealCount()|int|kembali banner jumlah benar
+|setUserInputEnabled(boolean)|this|Lumpuhkan leret manual Banner;true membenarkan,false  
+|setDatas(List<T>)|this|set semula banner data
+|isAutoLoop(boolean)|this|Sama ada untuk membenarkan putaran automatik
+|setLoopTime(long)|this|Tetapkan selang putaran (lalai 3000ms)
+|setScrollTime(long)|this|Tetapkan masa gelongsor karusel (800ms lalai)
+|start()|this|Mulakan putaran (terutamanya digunakan dengan kitaran hayat), atau anda menjeda secara manual dan mula semula
+|stop()|this|Hentikan karusel (terutamanya digunakan dengan kitaran hayat), atau anda perlu menjeda secara manual
+|setAdapter(T extends BannerAdapter)|this|sediakan banner penyesuai
+|setAdapter(T extends BannerAdapter,boolean)|this|sediakan banner Penyesuai, sama ada menyokong gelung tak terhingga
+|setOrientation(@Orientation)|this|sediakan banner Arah karusel (menegak or Tahap)
+|setOnBannerListener(this)|this|Tetapkan acara klik, subskrip bermula dari 0
+|addOnPageChangeListener(this)|this|Tambah ke viewpager2 leret monitor
 |setPageTransformer(PageTransformer)|this|设置viewpager的切换效果
 |addPageTransformer(PageTransformer)|this|添加viewpager的切换效果（可以设置多个）
 |setIndicator(Indicator)|this|设置banner轮播指示器(提供有base和接口，可以自定义)
